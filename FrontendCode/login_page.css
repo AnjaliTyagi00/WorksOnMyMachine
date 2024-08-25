@@ -1,0 +1,200 @@
+/* General Styles for the login page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #FC466B; /* Red color for the header */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Navigation */
+header nav {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 2rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+    background-color: #f4f4f4; /* Neutral background */
+}
+
+/* Login Container */
+#loginPage {
+    /* width: 100%; */
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    padding: 2rem;
+    margin-left: 2rem; /* Add left margin */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative; /* For pseudo-element positioning */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+}
+#loginPage.login-container{
+    height: 90%;
+    width: 90%;
+    align-items: center;
+}
+/* Background Image */
+/* #loginPage::before { */
+    /* content: ""; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: -20rem; Adjust as needed */
+    /* width: 20rem; Adjust as needed */
+    /* height: 100%; */
+    /* background-image: url('login_image.jpeg'); Ensure this path is correct */
+    /* background-position: left center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; Fit the image within specified width */
+    /* z-index: -1; Ensure it is behind the content */
+/* } */
+.login-image {
+    width: 45%;
+    height: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1), -15px -15px 15px rgba(0, 0, 0, 0.1);
+    
+    /* border-radius: 8px; */
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: red;
+}
+#p{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: red;
+}
+#login_main{
+    display: flex;
+    flex-direction: column;
+}
+/* .login-image img {
+     padding-top: 000px;
+    max-width: 400%;
+    border-radius: 8px;
+    margin-top: -1rem;
+} */
+
+/* .login-image {
+    float: right; /* Align the container to the right */
+    /* margin-bottom: 2rem; Add some space below the image */
+/* } */
+
+/* .login-image img { */
+    /* width: 100%; Ensure the image takes the full width of the container */
+    /* height: 100%; Maintain the aspect ratio */
+/* } */
+#loginPage h2 {
+    margin-bottom: 1.5rem;
+    color: #FC466B; /* Matching header color */
+}
+
+#loginPage .form-group {
+    margin-bottom: 2rem; /* Increased space between fields */
+}
+
+#loginPage .form-group label {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+#loginPage .form-group input,
+#loginPage .form-group select {
+    width: 100%;
+    padding: 0.75rem; /* Added padding for better appearance */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#loginPage button {
+    background-color: #FC466B; /* Red color for the button */
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#loginPage button:hover {
+    background-color: #d62839; /* Darker red on hover */
+}
+
+#loginPage .forgot-password {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+#loginPage .forgot-password a {
+    color: #FC466B; /* Matching header color */
+    text-decoration: none;
+}
+
+#loginPage .forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #FC466B; /* Red color for the footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

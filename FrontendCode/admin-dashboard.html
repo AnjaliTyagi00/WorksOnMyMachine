@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Meeting Room Booking System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="admin-page">
+    <!-- Header -->
+    <header>
+        <div class="logo">Meeting Room Booking</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+    <div id="burgerButton" class="burger-menu">
+        &#9776; <!-- This is the hamburger icon -->
+    </div>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="admin-dashboard.html" id="dashboardLink">Dashboard</a></li>
+                <li><a href="createRoom.html" id="createRoomLink">Create Room</a></li>
+                <li><a href="#" id="manageRoomsLink">Manage Rooms</a></li>
+                <li><a href="logout.html" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <section id="adminDashboard">
+            <h1>Admin Dashboard</h1>
+            <!-- <br> -->
+            <!-- <br> -->
+            <div class="button-container">
+            <button id="createRoomBtn" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Create Room</button>
+            <button id="manageRoomsBtn" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Manage Rooms</button>
+        </div>
+            <!-- <img src = "image2.jpg" alt="Meeting Room"> -->
+            <!-- Create Room Form -->
+            <div id="createRoomForm" style="display: none;">
+                <h3>Create Meeting Room</h3>
+                <!-- <form id="roomCreationForm">
+                    <label for="roomName">Room Name:</label>
+                    <input type="text" id="roomName" name="roomName" required>
+                    <label for="seatingCapacity">Seating Capacity:</label>
+                    <input type="number" id="seatingCapacity" name="seatingCapacity" required>
+                    <label>Amenities:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="projectorM" name="amenitiesM" value="Projector">
+                        <label for="projectorM">Projector</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="conferenceCallM" name="amenitiesM" value="Conference Call">
+                        <label for="conferenceCallM">Conference Call Facility</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="whiteboardM" name="amenitiesM" value="Whiteboard">
+                        <label for="whiteboardM">Whiteboard</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="waterDispenserM" name="amenitiesM" value="Water Dispenser">
+                        <label for="waterDispenserM">Water Dispenser</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="tvM" name="amenitiesM" value="TV">
+                        <label for="tvM">TV</label>
+                    </div>
+                </form>
+            </div> -->
+
+            <!-- Manage Rooms -->
+            <div id="manageRooms" style="display: none;">
+                <h3>Manage Meeting Rooms</h3>
+                <p>List of meeting rooms will be displayed here...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Meeting Room Booking System. All rights reserved.</p>
+    </footer>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

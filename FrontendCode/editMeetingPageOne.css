@@ -1,0 +1,93 @@
+/* Basic styling for the admin meetings overview page */
+
+
+
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#meetingsContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+   
+
+}
+
+.cardCustom
+{
+    min-width: 25%;
+    
+}
+
+#sidebar {
+    background-color: #f8f9fa;
+    padding: 15px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#mainContent {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Card styles */
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 20px;
+    width: 300px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+

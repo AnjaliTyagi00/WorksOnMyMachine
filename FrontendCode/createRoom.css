@@ -1,0 +1,95 @@
+/* General Form Styling */
+
+body{
+    background: url('image2.jpg') no-repeat center center;
+    
+}
+
+form#roomCreationForm {
+    background-color: #fff; /* White background for the form */
+    padding: 2rem;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 500px;
+    margin: 0 auto; /* Center the form */
+    margin-top: 6;
+    position: relative;
+    top: 30px;
+}
+
+/* Input and Label Styling */
+form#roomCreationForm label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333; /* Consistent text color */
+}
+
+form#roomCreationForm input[type="text"],
+form#roomCreationForm input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Checkbox Group Styling */
+.checkbox-group {
+    margin-bottom: 1rem;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.checkbox-group input{
+  margin-bottom:7px;
+  margin-left: 10px;
+}
+
+.checkbox-group label {
+    margin-left: 0.5rem;
+    color: #555;
+}
+
+/* Button Styling */
+button#createRoomBtn {
+    background: linear-gradient(to right, #FC466B, #3F5EFB); /* Matching gradient */
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: background 0.3s ease;
+}
+
+button#createRoomBtn:hover {
+    background: linear-gradient(to right, #3F5EFB, #FC466B); /* Inverse gradient on hover */
+}
+
+/* General Admin Dashboard Theme */
+body {
+    font-family: 'Varela Round', sans-serif; /* Matching font */
+    color: #333; /* Text color consistency */
+}
+
+main#mainContent {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9); /* Background that matches the overlay */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for the main content */
+}
+
+
+form#roomCreationForm {
+    text-align: center; /* Center align the content inside the form */
+}
+
+/* Adjust the button's display to inline-block for better centering */
+form#roomCreationForm button {
+    display: inline-block;
+    margin-top: 1rem;
+}

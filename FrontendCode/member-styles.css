@@ -1,0 +1,160 @@
+/* General Styles */
+body{
+    background: url('image2.jpg') no-repeat center center;
+    
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.806); /* Adjust the opacity as needed */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
+body {
+    font-family: 'Fuzzy Bubbles', cursive;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #FC466B;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center horizontally */
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem; /* Add some spacing below the heading */
+}
+
+header nav {
+    display: flex;
+    justify-content: center; /* Center navigation links */
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    position: fixed; 
+    top: 0; 
+    left: -200px; /* Start off-screen */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
+    color: white;
+    overflow-x: hidden;
+    transition: left 0.3s ease; 
+    z-index: 1000; 
+}
+
+#sidebar nav {
+    padding: 1rem;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem;
+    border-radius: 4px; 
+    font-size: 1rem;
+    transition: background-color 0.3s ease; 
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757; 
+}
+
+#sidebar:hover {
+    left: 0; /* Slide in the sidebar */
+}
+
+/* Main Content Styles */
+main#mainContent {
+    margin-left: 0; /* Remove the margin to prevent pushing */
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: flex-start; /* Align the content to the top */
+    text-align: center; /* Center text alignment */
+    transition: margin-left 0.3s ease; /* Smooth transition for the main content */
+}
+
+/* Center the heading at the top */
+#memberDashboard h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center; /* Center the heading horizontally */
+    width: 100%; /* Ensure the heading takes up the full width */
+}
+
+/* Center the button */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button container horizontally */
+    margin-bottom: 2rem;
+    width: 100%; /* Ensure the button container takes up the full width */
+    text-align: center; /* Center text alignment */
+}
+
+/* View Bookings and Book Room Sections */
+#viewBookings {
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 2rem;
+    width: 100%; /* Ensure sections take up the full width */
+}
+
+#viewBookings h3 {
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #FC466B;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    clear: both;
+}

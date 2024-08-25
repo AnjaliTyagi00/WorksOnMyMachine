@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #007bff; /* Blue background */
+            color: #ffffff;
+            padding: 15px 30px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1100;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #d1ecf1; /* Light blue on hover */
+            text-decoration: underline;
+        }
+
+        aside {
+            background-color: #f7b801;
+            color: #ffffff;
+            padding: 20px;
+            width: 60px; /* Default collapsed width */
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            transition: width 0.3s ease;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        aside:hover {
+            width: 200px; /* Expanded width on hover */
+        }
+
+        aside nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 60px; /* Offset for header */
+        }
+
+        aside nav ul li {
+            margin: 20px 0;
+            text-align: center;
+            opacity: 0; /* Hidden text by default */
+            transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+        }
+
+        aside:hover nav ul li {
+            opacity: 1; /* Show text on hover */
+        }
+
+        aside nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            white-space: nowrap; /* Prevent text wrapping */
+            transition: color 0.3s ease;
+        }
+
+        aside nav ul li a:hover {
+            color: #d1ecf1; /* Light blue on hover */
+            text-decoration: underline;
+        }
+
+        main {
+            margin-left: 80px; /* Adjusted margin for collapsed sidebar */
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: margin-left 0.3s ease;
+            margin-top: 70px; /* Adjusted margin for header */
+        }
+
+        aside:hover + main {
+            margin-left: 220px; /* Adjust margin when sidebar is expanded */
+        }
+
+        footer {
+            background-color: #007bff; /* Blue background */
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button to toggle sidebar */
+        #toggleSidebar {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 1100;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #toggleSidebar:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex justify-content-between align-items-center">
+        <div class="logo">Meeting Room Booking System</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <aside id="sidebar">
+        <nav>
+            <ul class="list-unstyled">
+                <li><a href="#" id="dashboardLink">Dashboard</a></li>
+                <li><a href="#" id="organizeMeetingLink">Organize Meeting</a></li>
+                <li><a href="#" id="viewScheduleLink">View Schedule</a></li>
+                <li><a href="#" id="createRoomLink">Create Room</a></li>
+                <li><a href="#" id="manageRoomsLink">Manage Rooms</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="mainContent">
+        <section id="adminDashboard">
+            <h2>Admin Dashboard</h2>
+            <button id="createRoomBtn" class="btn btn-primary">Create Room</button>
+            <button id="manageRoomsBtn" class="btn btn-secondary">Manage Rooms</button>
+
+            <!-- Create Room Form -->
+            <div id="createRoomForm" class="mt-4" style="display: none;">
+                <h3>Create Meeting Room</h3>
+                <form id="roomCreationForm">
+                    <div class="form-group">
+                        <label for="roomName">Room Name:</label>
+                        <input type="text" class="form-control" id="roomName" name="roomName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seatingCapacity">Seating Capacity:</label>
+                        <input type="number" class="form-control" id="seatingCapacity" name="seatingCapacity" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amenities:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="projector" name="amenities" value="Projector">
+                            <label class="form-check-label" for="projector">Projector</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="conferenceCall" name="amenities" value="Conference Call">
+                            <label class="form-check-label" for="conferenceCall">Conference Call Facility</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="whiteboard" name="amenities" value="Whiteboard">
+                            <label class="form-check-label" for="whiteboard">Whiteboard</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="waterDispenser" name="amenities" value="Water Dispenser">
+                            <label class="form-check-label" for="waterDispenser">Water Dispenser</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="tv" name="amenities" value="TV">
+                            <label class="form-check-label" for="tv">TV</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Create Room</button>
+                </form>
+            </div>
+
+            <!-- Manage Rooms -->
+            <div id="manageRooms" class="mt-4" style="display: none;">
+                <h3>Manage Meeting Rooms</h3>
+                <p>List of meeting rooms will be displayed here...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meeting Room Booking System</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

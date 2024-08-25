@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Meeting Booking - Meeting Room Booking System</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="bookingMeetingManager.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">Meeting Room Booking</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="logout.html">Logout</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="mainContent2">
+      <section id="managerBooking">
+        <h1>Book a Meeting Room</h1>
+        <!-- <br />
+        <br /> -->
+
+        <!-- Booking Form -->
+        <form id="meetingBookingForm" method="POST" action="/submit-booking">
+          <!-- Room Selection -->
+          <div class="form-group">
+            <label for="meetingRoom">Select Meeting Room:</label>
+            <select
+              id="meetingRoom"
+              name="meetingRoom"
+              class="form-control"
+              required
+            >
+              <option value="" disabled selected>Select a room</option>
+              <option value="Conference Room A">Conference Room A</option>
+              <option value="Meeting Room B">Meeting Room B</option>
+              <option value="Board Room">Board Room</option>
+            </select>
+          </div>
+
+          <!-- Date and Time -->
+          <div class="form-group">
+            <label for="meetingDate">Select Date:</label>
+            <input
+              type="date"
+              id="meetingDate"
+              name="meetingDate"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="meetingTime">Select Time:</label>
+            <input
+              type="time"
+              id="meetingTime"
+              name="meetingTime"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <!-- Duration -->
+          <div class="form-group">
+            <label for="meetingDuration">Duration (in hours):</label>
+            <input
+              type="number"
+              id="meetingDuration"
+              name="meetingDuration"
+              class="form-control"
+              required
+              min="1"
+              max="8"
+            />
+          </div>
+
+          <!-- Amenities Selection -->
+          <div class="form-group">
+            <label>Amenities:</label>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                id="projector"
+                name="amenities"
+                value="Projector"
+              />
+              <label for="projector">Projector</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                id="conferenceCall"
+                name="amenities"
+                value="Conference Call"
+              />
+              <label for="conferenceCall">Conference Call Facility</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                id="whiteboard"
+                name="amenities"
+                value="Whiteboard"
+              />
+              <label for="whiteboard">Whiteboard</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                id="waterDispenser"
+                name="amenities"
+                value="Water Dispenser"
+              />
+              <label for="waterDispenser">Water Dispenser</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="tv" name="amenities" value="TV" />
+              <label for="tv">TV</label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="d-flex justify-content-center align-item-center">
+            <button
+              type="submit"
+              id="createRoomBtn"
+              class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-1 mb-1"
+            >
+              Book Meeting
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Meeting Room Booking System. All rights reserved.</p>
+    </footer>
+
+    <!-- <script src="manager-booking.js"></script> -->
+     
+  </body>
+</html>
