@@ -35,7 +35,7 @@
         <br /> -->
 
         <!-- Booking Form -->
-        <form id="meetingBookingForm" method="POST" action="/submit-booking">
+        <form id="meetingBookingForm" method="GET" action="./bookingMeetingManager.html">
           <!-- Room Selection -->
           <div class="form-group">
             <label for="meetingRoom">Select Meeting Room:</label>
@@ -156,4 +156,10 @@
     <!-- <script src="manager-booking.js"></script> -->
      
   </body>
+  <script>
+    document.getElementById("meetingBookingForm").addEventListener("submit",(e)=>{
+      e.preventDefault();
+      window.location.href = "editMeetingPageOne.html";
+    })
+  </script>
 </html>
